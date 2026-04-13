@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MarketMVP | Criar conta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Plus Jakarta Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Plus Jakarta Sans", "sans-serif"],
+            },
+            colors: {
+              brand: { 50: "#F8F7F2", 100: "#EDE8D8", 200: "#D9CEAA", 300: "#C7B57D", 400: "#B99B56", 500: "#A8853A", 600: "#886B2F", 700: "#665024", 800: "#453519", 900: "#251E10" },
+              accent: { 500: "#0A7D7A", 600: "#075F5D" },
+              coral: { 500: "#E66A4E", 600: "#D55336" },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-brand-50 font-body text-brand-900">
+    <div class="flex min-h-screen items-center justify-center p-4">
+      <div class="w-full max-w-xl rounded-3xl border border-brand-200 bg-white p-8 shadow-sm">
+        <header class="text-center">
+          <h1 class="font-display text-3xl font-bold">Criar conta</h1>
+          <p class="mt-2 text-sm text-brand-700">Junte-se ao MarketMVP hoje mesmo.</p>
+        </header>
+
+        <form action="/auth/signup" method="POST" class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <label class="block sm:col-span-2">
+            <span class="mb-1 block text-sm font-medium">Nome completo</span>
+            <input type="text" name="nome" required placeholder="Seu nome" class="w-full rounded-xl border border-brand-300 px-4 py-2.5 outline-none ring-coral-500 focus:ring" />
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="mb-1 block text-sm font-medium">Email</span>
+            <input type="email" name="email" required placeholder="you@example.com" class="w-full rounded-xl border border-brand-300 px-4 py-2.5 outline-none ring-coral-500 focus:ring" />
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="mb-1 block text-sm font-medium">Senha</span>
+            <input type="password" name="password" required placeholder="********" class="w-full rounded-xl border border-brand-300 px-4 py-2.5 outline-none ring-coral-500 focus:ring" />
+          </label>
+          <label class="block sm:col-span-2">
+            <span class="mb-1 block text-sm font-medium">Tipo de conta</span>
+            <select name="perfil" class="w-full rounded-xl border border-brand-300 px-4 py-2.5 outline-none ring-coral-500 focus:ring bg-white">
+              <option value="comprador">Comprador</option>
+              <option value="vendedor">Vendedor</option>
+            </select>
+          </label>
+          
+          <button type="submit" class="mt-2 w-full rounded-xl bg-brand-900 px-4 py-3 font-semibold text-brand-50 hover:bg-brand-800 transition-colors sm:col-span-2">
+            Cadastrar
+          </button>
+        </form>
+
+        <p class="mt-8 text-center text-sm text-brand-700">
+          Já tem conta? <a href="/login" class="font-bold text-brand-900 hover:underline">Entrar</a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
